@@ -5,7 +5,7 @@ import java.lang.management.ManagementFactory;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 public class Main {
-    static Logger logger = Logger.getLogger(LogSwitchMBeanImpl.class);
+    static Logger logger = Logger.getLogger(Main.class);
     public static void main(String[] args) throws MalformedObjectNameException, NotCompliantMBeanException, InstanceAlreadyExistsException, MBeanRegistrationException {
         // Створення MBean-сервера
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
@@ -20,7 +20,7 @@ public class Main {
         mbs.registerMBean(mBean, mBeanName);
 
         // Запуск програми
-        System.out.println("you are welcome");
+        logger.info("You are welcome!");
         Scanner scanner = new Scanner(System.in);
 
         while(true){
