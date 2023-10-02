@@ -6,7 +6,6 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 public class Main {
     static Logger logger = Logger.getLogger(LogSwitchMBeanImpl.class);
-
     public static void main(String[] args) throws MalformedObjectNameException, NotCompliantMBeanException, InstanceAlreadyExistsException, MBeanRegistrationException {
         // Створення MBean-сервера
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
@@ -15,7 +14,7 @@ public class Main {
         StandardMBean mBean = new StandardMBean(new LogSwitchMBeanImpl(), LogSwitchMBean.class);
 
         // Створення ObjectName для реєстрації MBean
-        ObjectName mBeanName = new ObjectName("org.example:type=LogSwitchMBeanImpl");
+        ObjectName mBeanName = new ObjectName("com.example:type=LogSwitchMBeanImpl");
 
         // Реєстрація MBean в MBean-сервері
         mbs.registerMBean(mBean, mBeanName);
